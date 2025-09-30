@@ -104,10 +104,11 @@ public class Main {
         arrayIns.insert(-50);
         arrayIns.insert(-60);
         arrayIns.insert(30);
-        //arrayIns.display();
+        arrayIns.display();
         arrayIns.insertSort();
         arrayIns.display();
-        System.out.println(arrayIns.median());
+        arrayIns.noDups();
+        arrayIns.display();
     }
 
     private static void testArrayInOb() {
