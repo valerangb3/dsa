@@ -14,11 +14,10 @@ public class ArrayInsert {
     }
 
     public void display() {
-        int size = a.length;
         System.out.print("[ ");
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < nElems; i++) {
             System.out.print(a[i]);
-            if (i + 1 < size) {
+            if (i + 1 < nElems) {
                 System.out.print(", ");
             }
         }
@@ -26,7 +25,7 @@ public class ArrayInsert {
     }
 
     public void insertSort() {
-        for (int outer = 1; outer < a.length; outer++) {
+        for (int outer = 1; outer < nElems; outer++) {
             int inner = outer;
             long temp = a[outer];
             while (inner > 0 && a[inner - 1] > temp) {
@@ -35,6 +34,19 @@ public class ArrayInsert {
             }
             a[inner] = temp;
         }
+    }
+
+    public void noDups() {
+        if (nElems == 0) return;
+        int uniqueIndex = 0;
+        for (int i = 1; i < nElems; i++) {
+            long uniqueValue = a[uniqueIndex];
+            long currValue = a[i];
+            if (uniqueValue != currValue) {
+                a[++uniqueIndex] = currValue;
+            }
+        }
+        nElems = uniqueIndex + 1;
     }
 
     public float median() {
