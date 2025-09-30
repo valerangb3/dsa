@@ -36,4 +36,12 @@ public class ArrayInsert {
             a[inner] = temp;
         }
     }
+
+    public float median() {
+        int medianPosition = nElems / 2;
+        if (nElems % 2 == 0) {
+            return ((float) a[medianPosition] + (float) a[medianPosition - 1]) / 2;
+        }
+        return (float) a[medianPosition];
+    }
 }
