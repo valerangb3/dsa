@@ -88,7 +88,7 @@ public class Main {
     }
 
     private static void testInsertSort() {
-        ArrayInsert arrayIns = new ArrayInsert(10);
+        ArrayInsert arrayIns = new ArrayInsert(15);
         arrayIns.insert(1);
         arrayIns.insert(-1);
         arrayIns.insert(2);
@@ -96,12 +96,18 @@ public class Main {
         arrayIns.insert(11);
         arrayIns.insert(-2);
         arrayIns.insert(-15);
+        arrayIns.insert(33);
+        arrayIns.insert(-1);
+        arrayIns.insert(3);
+        arrayIns.insert(1);
         arrayIns.insert(22);
         arrayIns.insert(-50);
         arrayIns.insert(-60);
-        arrayIns.display();
+        arrayIns.insert(30);
+        //arrayIns.display();
         arrayIns.insertSort();
         arrayIns.display();
+        System.out.println(arrayIns.median());
     }
 
     private static void testArrayInOb() {
@@ -129,10 +135,10 @@ public class Main {
 
     public static void main(String[] arg) {
         //testArrayInOb();
-        //testInsertSort();
+        testInsertSort();
         //testSelectSort();
-        testBubbleSort();
-        testBubbleSortWithTwoPointers();
+        //testBubbleSort();
+        //testBubbleSortWithTwoPointers();
         /*int[] someArray = {55, 10, 4, 3, 1, 0, -1, -23, -44, -55};
         display(someArray);
         selectSort(someArray);
