@@ -14,11 +14,10 @@ public class ArrayBub {
     }
 
     public void display() {
-        int size = a.length;
         System.out.print("[ ");
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < nElems; i++) {
             System.out.print(a[i]);
-            if (i + 1 < size) {
+            if (i + 1 < nElems) {
                 System.out.print(", ");
             }
         }
@@ -34,6 +33,31 @@ public class ArrayBub {
                 }
             }
         }
+    }
+
+    public void oddEvenSort() {
+        if (nElems <= 1) return;
+        boolean isNotSort = true;
+        int count = 0;
+        while (isNotSort) {
+            isNotSort = false;
+            for (int firstIter = 1; firstIter < nElems - 1; firstIter += 2) {
+                if (a[firstIter] > a[firstIter + 1]) {
+                    swap(firstIter, firstIter + 1);
+                    isNotSort = true;
+                }
+            }
+            for (int secondIter = 0; secondIter < nElems - 1; secondIter += 2) {
+                if (a[secondIter] > a[secondIter + 1]) {
+                    swap(secondIter, secondIter + 1);
+                    isNotSort = true;
+                }
+            }
+            if (isNotSort) {
+                count++;
+            }
+        }
+        System.out.println("Количество двухсторонних обработок: " + count);
     }
 
     public void bubbleSortWitTwoPointers() {
