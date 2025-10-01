@@ -48,18 +48,19 @@ public class Main {
     }
 
     private static void testBubbleSort() {
-        int size = 100_000;
+        int size = 5;
         Random rnd = new Random();
         ArrayBub arrayBub = new ArrayBub(size);
         for (int i = 0; i < size; i++) {
-            arrayBub.insert(rnd.nextLong() * (size - 1));
+            arrayBub.insert(rnd.nextLong(-255, 255) );
         }
-        //arrayBub.display();
+        arrayBub.display();
         long startTime = System.currentTimeMillis();
-        arrayBub.bubbleSort();
+        //arrayBub.bubbleSort();
+        arrayBub.oddEvenSort();
         long endTime = (System.currentTimeMillis() - startTime);
         System.out.println("Время выполнения: " + endTime / 1_000 + " сек.");
-        //arrayBub.display();
+        arrayBub.display();
     }
 
     private static void testBubbleSortWithTwoPointers() {
@@ -136,9 +137,9 @@ public class Main {
 
     public static void main(String[] arg) {
         //testArrayInOb();
-        testInsertSort();
+        //testInsertSort();
         //testSelectSort();
-        //testBubbleSort();
+        testBubbleSort();
         //testBubbleSortWithTwoPointers();
         /*int[] someArray = {55, 10, 4, 3, 1, 0, -1, -23, -44, -55};
         display(someArray);
